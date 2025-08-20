@@ -1,53 +1,32 @@
-function randomNumberOrLetter(){
-
-    let randomNumber = Math.floor((Math.random()*12)+1)
+function randomNumberLetterOrEmoji(array){
+    let randomNumberEmoji = Math.floor(Math.random()*array.length)
     
-    if(randomNumber > 1 && randomNumber < 10){
-        return randomNumber
-    }
-
-    else{
-        if(randomNumber === 1){
-            randomNumber = 'A' 
-        }
-        else if(randomNumber === 10){
-            randomNumber =  'J'
-        }
-        else if(randomNumber === 11){
-            randomNumber =  'Q'
-        }
-        else{
-            randomNumber = 'K'
-        }
-        return randomNumber
-    }
-}
-
-function randomEmoji(){
-    let randomNumberEmoji = Math.floor(Math.random()*4)
-     
-    if(randomNumberEmoji === 0){
-        return '♦'
-    }
-    else if(randomNumberEmoji === 1){
-        return '♥'
-    }
-    else if(randomNumberEmoji === 2){
-        return '♠'
-    }
-    else{
-        return '♣'
-    }    
+    return array[randomNumberEmoji]
 }
 
 window.onload = ()=>{
+    
+    let arrayOfQuantity = ['A','2','3','4','5','6','7','8','9','J','Q','K']
+    let arrayEmoji = ['♦','♥','♠','♣']
+    
     let headerCard = document.querySelector('#headerCard')
     let bodyCard = document.querySelector('#bodyCard')
     let footerCard = document.querySelector('#footerCard')
+    let newCardButton = document.querySelector('#buttonReset')
 
-    let numberLetterResult = randomNumberOrLetter()
-    let emojiResult = randomEmoji() 
-    
+    newCardButton.addEventListener('click',function(){
+        location.reload()
+    })
+
+    let numberLetterResult = randomNumberLetterOrEmoji(arrayOfQuantity)
+    let emojiResult = randomNumberLetterOrEmoji(arrayEmoji) 
+
+
+    if (emojiResult === '♦' || emojiResult === '♥'){
+        headerCard.style.color = 'red'
+        footerCard.style.color = 'red'
+    }
+
     headerCard.textContent = emojiResult 
     bodyCard.textContent = numberLetterResult
     footerCard.textContent = emojiResult

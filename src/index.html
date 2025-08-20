@@ -5,22 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
-  <title>Random card generator ♦ ♥ ♠ ♣</title>
+  <title>Random card generator</title>
 </head>
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-4 bg-light rounded-1 justify-content-center">
-        <div>
-          <p id="headerCard" class="text-start fs-1 ms-2 mb-0 mt-0"></p>
+  <div class="container vh-100">
+    <div class="row h-75 align-items-center justify-content-center">
+      <div class="h-50 col-6 col-xl-2 col-lg-3 col-md-4 col-sm-5 bg-light rounded-1">
+        <div class="row h-100">
+          <div class="col align-self-start">
+            <p id="headerCard" class="text-start fs-1 ms-2 mb-0 mt-0"></p>
+          </div>
+          <div class="col align-self-center">
+            <p id="bodyCard" class="text-center fs-1 fw-bold mb-0 mt-0"></p>
+          </div>
+          <div class="col align-self-end">
+            <p id="footerCard" class="rotate-item text-start fs-1 me-2 mb-0 mt-0"></p>
+          </div>
         </div>
-        <div>
-          <p id="bodyCard" class="text-center fs-1 fw-bold mb-0 mt-0"></p>
-        </div>
-        <div>
-          <p id="footerCard" class="text-end fs-1 me-2 mb-0 mt-0"></p>
-        </div>
+      </div>
     </div>
+    <div class="row h-25 align-items-center justify-content-center">
+      <div class="col-4 text-center">
+        <button type="button" class="btn btn-outline-info" id="buttonReset">NEW CARD!!!</button>
+      </div>
     </div>
   </div>
   
